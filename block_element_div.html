@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div element</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        span{
+            color: green;
+        }
+        *{
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        body{
+            margin: 40px;
+        }
+        pre{
+            border-radius: 10px;
+        }
+        .format{
+            background-color: rgb(40, 37, 37);
+            padding: 18px;
+            color: rgb(230, 217, 217);
+        }
+    </style>
+</head>
+<body>
+        <h1>🔷 <span>&lt;div&gt;</span> Element</h1>
+        <hr>
+        <h2>🔹 Proper Name:</h2>
+        <p>Division Element</p>
+        <hr>
+        <h2>🔹 <span>&lt;div&gt;</span> का work क्या है?</h2>
+        <ul>
+            <li> <span>div</span> एक container element है।</li>
+            <li>इसका work होता है दूसरे elements को group करना और उन पर CSS design apply करना।</li>
+            <br>
+            <li>यह अपने आप कोई design नहीं देता।</li>
+            <li>यह सिर्फ एक box create करता है।</li>
+        </ul>
+        <hr>
+        <h2>🎨 <span>&lt;div&gt;</span> पर लगने वाली important CSS properties</h2>
+        <p>अब हम सिर्फ design वाली properties समझेंगे।</p>
+        <hr>
+        <h3>1️⃣ background-color</h3>
+        <h3>👉 इसका work:</h3>
+        <p>यह element के अंदर का background color बदलता है।</p>
+        <h3>⚠️ ध्यान:</h3>
+        <ul>
+            <li>यह सिर्फ content + padding area को color करता है।</li>
+            <li>margin area को color नहीं करता।</li>
+        </ul>
+        <pre><code class="language-css">background-color: 🟥red;</code></pre>
+        <hr>
+        <h2>2️⃣ width</h2>
+        <h2>👉 इसका work:</h2>
+        <p>यह box की horizontal size तय करता है।</p>
+        <pre><code class="language-css">width: 300px;</code></pre>
+        <p>या</p>
+        <pre><code class="language-css">width: 50%;</code></pre>
+        <h2>3️⃣ height</h2>
+        <h2>👉 इसका work:</h2>
+        <p>यह box की vertical size तय करता है।</p>
+        <pre><code class="language-css">height: 200px;</code></pre>
+        <h2>⚠️ ध्यान:</h2>
+        <p>अगर content ज्यादा हुआ तो overflow हो सकता है।</p>
+        <hr>
+        <h2>4️⃣ padding</h2>
+        <h2>👉 इसका work:</h2>
+        <p>यह content और border के बीच की अंदर वाली space देता है।</p>
+        <pre><code class="language-css">padding: 20px;</code></pre>
+        <p>यह background area के अंदर आता है।</p>
+        <hr>
+        <h2>5️⃣ border</h2>
+        <h2>👉 इसका work:</h2>
+        <p>यह element के चारों तरफ line बनाता है।</p>
+        <pre><code class="language-css">border: 5px solid black;</code></pre>
+        <p>Format:</p>
+        <pre class="format">border: width style color;</pre>
+        <hr>
+        <h2>6️⃣ margin</h2>
+        <h2>👉 इसका work:</h2>
+        <p>यह element के बाहर की space देता है।</p>
+        <pre><code class="language-css">margin: 20px;</code></pre>
+        <h2>⚠️ ध्यान:</h2>
+        <p>margin का कोई color नहीं होता।</p>
+        <hr>
+        <h2>7️⃣ border-radius</h2>
+        <h2>👉 इसका work:</h2>
+        <p>यह corners को गोल बनाता है।</p>
+        <pre><code class="language-css">border-radius: 10px;</code></pre>
+        <p>पूरी तरह गोल:</p>
+        <pre><code class="language-css">border-radius: 50%;</code></pre>
+        <hr>
+        <h2>8️⃣ box-shadow</h2>
+        <h2>👉 इसका work:</h2>
+        <p>यह element को shadow effect देता है।</p>
+        <pre><code class="language-css">box-shadow: 0 5px 15px rgba(0,0,0,0.3);</code></pre>
+        <hr>
+        <h2>9️⃣ color</h2>
+        <h2>👉 इसका work:</h2>
+        <p>यह text का color बदलता है।</p>
+        <pre><code class="language-css">color: white;</code></pre>
+        <hr>
+        <h1>📦 CSS Box Model (बहुत important)</h1>
+        <p>Structure हमेशा याद रखें:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Margin <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡Border <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡Padding <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡Content</p>
+        <p>इसी को कहते हैं CSS Box Model</p>
+        <hr>
+        
+
+
+
+        
+
+
+
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

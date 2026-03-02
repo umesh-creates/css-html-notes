@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p element</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        span {
+            color: green;
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        body {
+            margin: 40px;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .format {
+            background-color: rgb(40, 37, 37);
+            padding: 18px;
+            color: rgb(230, 217, 217);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔷 <span>&lt;p&gt;</span> Element</h1>
+    <h2>🔹 Proper Name:</h2>
+    <p>Paragraph Element</p>
+    <hr>
+    <h2>🔹 <span>&lt;p&gt;</span> का work क्या है?</h2>
+    <ul>
+        <li><span>&lt;p&gt;</span> का work होता है paragraph लिखना।</li>
+        <li>यह text को अलग block में show करता है।</li>
+        <li>इसके पहले और बाद में <b>browser default margin</b> देता है।</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code class="language-html">&lt;p&gt;यह एक paragraph है।&lt;/p;
+&lt;p&gt;यह दूसरा paragraph है।&lt;/p&gt;</code></pre>
+    <hr>
+    <h2>🎨 <span>&lt;p&gt;</span> पर लगने वाली Important CSS properties</h2>
+    <p>अब हम design properties समझेंगे।</p>
+    <hr>
+    <h2> 1️⃣ color</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Text का color change करता है।</p>
+    <pre><code class="language-css">color: 🟥red;</code></pre>
+    <hr>
+    <h2>2️⃣ background-color</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Paragraph के पीछे background color देता है।</p>
+    <h2>⚠️ ध्यान:</h2>
+    <p>यह content + padding area को color करता है।</p>
+    <pre><code class="language-css">background-color: 🟨yellow;</code></pre>
+    <hr>
+    <h2>3️⃣ font-size</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Text की size change करता है।</p>
+    <pre><code class="language-css">font-size: 20px;</code></pre>
+    <hr>
+    <h2>4️⃣ font-weight</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Text को bold या normal करता है।</p>
+    <pre><code class="language-css">font-weight: bold;</code></pre>
+    <p>या</p>
+    <pre><code class="language-css">font-weight: 700;</code></pre>
+    <hr>
+    <h2>5️⃣ font-family</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Text का font style change करता है।</p>
+    <pre><code class="language-css">font-family: Arial, sans-serif;</code></pre>
+    <hr>
+    <h2>6️⃣ text-align</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Text alignment change करता है।</p>
+    <pre><code class="language-css">text-align: center;
+text-align: right;
+text-align: left;
+text-align: justify;</code></pre>
+    <hr>
+    <h2>7️⃣ line-height</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Lines के बीच की vertical spacing control करता है।</p>
+    <pre><code class="language-css">line-height: 1.6;</code></pre>
+    <p>यह paragraph को readable बनाता है।</p>
+    <hr>
+    <h2>8️⃣ letter-spacing</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Letters के बीच की spacing change करता है।</p>
+    <pre><code class="language-css">letter-spacing: 2px;</code></pre>
+    <hr>
+    <h2>9️⃣ text-transform</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Text को uppercase / lowercase में बदलता है।</p>
+    <pre><code class="language-css">text-transform: uppercase;
+text-transform: lowercase;
+text-transform: capitalize;</code></pre>
+    <hr>
+    <h2>🔟 padding</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Paragraph के side में space देता है।</p>
+    <pre><code class="language-css">padding: 20px;</code></pre>
+    <hr>
+    <h2>1️⃣1️⃣ margin</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Paragraph के बाहर space देता है।</p>
+    <pre><code class="language-css">margin: 20px;</code></pre>
+    <h2>⚠️ ध्यान:</h2>
+    <p>Browser <span>&lt;p&gt;</span> को default margin देता है।</p>
+    <hr>
+    <h2>1️⃣2️⃣ border</h2>
+    <h2>👉 इसका work:</h2>
+    <p>Paragraph के चारों तरफ line/border देता है।</p>
+    <pre><code class="language-css">border: 2px solid black;</code></pre>
+    <hr>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

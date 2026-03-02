@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css display properties</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 25px;
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+
+        
+        span {
+            color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>🎯 CSS display Property</h1>
+    <hr>
+    <h2>🔹 display क्या करता है?</h2>
+    <p><b>display</b> तय करता है कि <b>element</b>:</p>
+    <p>👉 नई line लेगा या नहीं<br>
+👉 कितनी width लेगा<br>
+👉 अंदर के children कैसे arrange होंगे</p>
+<hr>
+
+
+
+
+    <h2>1️⃣ block</h2>
+    <h3>📦 Examples</h3>
+    <p><span>div</span>, <span>section</span>, <span>p</span>, <span>h1</span> default block होते हैं।</p>
+    <pre><code class="language-css">display: block;</code></pre>
+    <p>✔️ हमेशा नई line से शुरू होगा<br>
+✔️ पूरी width ले लेता है<br>
+✔️ width और height काम करती है</p>
+<p>🧠 याद रखो: <br>
+<b>block = पूरा डिब्बा</b></p>
+    <hr>
+    <h2>2️⃣ inline</h2>
+<p>✔️ नई line नहीं लेता<br>
+✔️ जितनी जरूरत उतनी जगह<br>
+✔️ width / height काम नहीं करती</p>
+    <h3>📦 Examples</h3>
+    <p><span>span</span>, <span>a</span>, <span>strong</span></p>
+    <pre><code class="language-css">display: inline;</code></pre>
+<p>🧠 याद रखो: <br>
+<b>inline = text जैसा behavior</b></p>
+<hr>
+    <h2>3️⃣ inline-block 🔥</h2>
+<p>✔️ नई line नहीं लेता <br>
+✔️ width / height काम करती है <br>
+✔️ block + inline का mix</p>
+    <pre><code class="language-css">display: inline-block;</code></pre>
+<p>🧠 याद रखो:</p>
+<b>inline-block = smart block</b>
+    <hr>
+    <h2>4️⃣ none</h2>
+<p>✔️ element पूरी तरह गायब<br>
+✔️ जगह भी नहीं लेगा<br>
+✔️ layout से हट जाएगा</p>
+<pre><code class="language-css">display: none;</code></pre>
+<p>🧠 याद रखो:</p>
+<b>none = पूरा delete जैसा effect</b>
+<hr>
+<h2>5️⃣ flex 🔥🔥🔥 (Most Important)</h2>
+<p>✔️ children एक line में आ जाते हैं<br>
+✔️ alignment control कर सकते हो<br>
+✔️ modern layout system</p>
+<pre><code class="language-css">display: flex;
+</code></pre>
+<p>🧠 याद रखो:</p>
+<b>flex = flexible layout</b>
+<hr>
+<h2>7️⃣ inline-flex</h2>
+<p>✔️ flex जैसा layout <br>
+✔️ लेकिन नई line नहीं लेता <br>
+✔️ जितनी जरूरत उतनी width</p>
+<pre><code class="language-css">display: inline-flex;</code></pre>
+<b>🧠 inline-flex = flex लेकिन line में</b>
+<hr>
+<h2>8️⃣ grid</h2>
+<p>✔️ rows और columns बना सकते हो<br>
+✔️ powerful layout control <br>
+✔️ 2D layout system</p>
+<pre><code class="language-css">display: grid;</code></pre>
+<b>🧠 grid = table जैसा powerful layout</b>
+<hr>
+<h2>8️⃣ inline-grid;</h2>
+<p>✔️ grid layout <br>
+✔️ नई line नहीं लेता <br>
+✔️ जितनी जरूरत उतनी width</p>
+<pre><code class="language-css">display: inline-grid;</code></pre>
+<b>🧠 inline-grid = grid लेकिन line में</b>
+<hr>
+<h1>📊 Final Quick Table</h1>
+  <table class="my-table">
+    <tr>
+      <th>display value</th>
+      <th>क्या करेगा</th>
+    </tr>
+    <tr>
+      <td>block</td>
+      <td>नई line + पूरी width</td>
+    </tr>
+    <tr>
+      <td>inline</td>
+      <td>line में + width height नहीं</td>
+    </tr>
+    <tr>
+      <td>inline-block</td>
+      <td>line में + width height काम</td>
+    </tr>
+    <tr>
+      <td>none</td>
+      <td>पूरा गायब</td>
+    </tr>
+    <tr>
+      <td>flex</td>
+      <td>flexible layout</td>
+    </tr>
+    <tr>
+      <td>inline-flex</td>
+      <td>flex लेकिन line में</td>
+    </tr>
+    <tr>
+      <td>grid</td>
+      <td>row + column layout</td>
+    </tr>
+    <tr>
+      <td>inline-grid</td>
+      <td>grid लेकिन line में</td>
+    </tr>
+  </table>
+  <hr>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

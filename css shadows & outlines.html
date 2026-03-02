@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css shadows & outlines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 25px;
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+
+        /* demo */
+        .card {
+            margin: auto;
+            width: 80vw;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        button:focus {
+            outline: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🎯 CSS Shadows & Outlines – Complete Notes</h1>
+    <hr>
+    <h2>1️⃣ box-shadow</h2>
+    <h3>📌 क्या करता है?</h3>
+    <p>Element के बाहर shadow बनाता है।</p>
+    <hr>
+    <h3>🧠 Syntax</h3>
+    <pre><code class="language-css">box-shadow: x-offset y-offset blur spread color;</code></pre>
+    <hr>
+    <h3>📌 Basic Example</h3>
+    <pre><code class="language-css">box-shadow: 5px 5px 10px black;</code></pre>
+    <h3>इसका मतलब:</h3>
+    <ul>
+        <li>5px → right</li>
+        <li>5px → down</li>
+        <li>10px → blur</li>
+        <li>black → color</li>
+    </ul>
+    <hr>
+    <h3>🎯 Parameters समझो</h3>
+    <table class="my-table">
+        <tr>
+            <th>value</th>
+            <th>मतलब</th>
+        </tr>
+        <tr>
+            <td>x-offset</td>
+            <td>left/right shadow</td>
+        </tr>
+        <tr>
+            <td>y-offset</td>
+            <td>up/down shadow</td>
+        </tr>
+        <tr>
+            <td>blur</td>
+            <td>कितना soft होगा</td>
+        </tr>
+        <tr>
+            <td>spread</td>
+            <td>shadow कितना फैलेगा</td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>shadow का रंग</td>
+        </tr>
+    </table>
+    <hr>
+    <h3>🔥 Full Example</h3>
+    <pre><code class="language-css">box-shadow: 0px 4px 15px 2px rgba(0,0,0,0.3);</code></pre>
+    <hr>
+    <h2>💎 Inner Shadow</h2>
+    <pre><code class="language-css">box-shadow: inset 0 0 10px black;</code></pre>
+    <p>👉 inset = अंदर shadow</p>
+    <hr>
+    <h3>✨ Multiple Shadow</h3>
+    <pre><code class="language-css">box-shadow:
+    0 0 5px red,
+    0 0 10px blue;</code></pre>
+    <hr>
+    <h2>2️⃣ text-shadow</h2>
+    <h3>📌 क्या करता है?</h3>
+    <p>Text के पीछे shadow देता है।</p>
+    <hr>
+    <h3>🧠 Syntax</h3>
+    <pre><code class="language-css">text-shadow: x-offset y-offset blur color;</code></pre>
+    <hr>
+    <h3>Example</h3>
+    <pre><code class="language-css">text-shadow: 2px 2px 5px gray;</code></pre>
+    <hr>
+    <h3>Glow Effect</h3>
+    <pre><code class="language-css">text-shadow: 0 0 10px red;</code></pre>
+    <hr>
+    <h2>3️⃣ outline</h2>
+    <h3>📌 क्या है?</h3>
+    <p>
+        Border जैसा दिखता है
+    </p>
+    <p>
+        लेकिन layout space नहीं लेता।
+    </p>
+    <pre><code class="language-css">outline: width style color;</code></pre>
+    <h3>Example</h3>
+    <pre><code class="language-css">outline: 3px solid red;</code></pre>
+    <h2>👉Border vs Outline Difference</h2>
+    <table class="my-table">
+        <tr>
+            <th>Border</th>
+            <th>Outline</th>
+        </tr>
+        <tr>
+            <td>Space लेता है</td>
+            <td>Space नहीं लेता</td>
+        </tr>
+        <tr>
+            <td>Box size बदलता है</td>
+            <td>Box size नहीं बदलता</td>
+        </tr>
+        <tr>
+            <td>Radius follow करता है</td>
+            <td>Radius follow नहीं करता (mostly)</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>🎯 Outline Offset</h2>
+    <pre><code class="language-css">outline: 3px solid blue;
+outline-offset: 5px;</code></pre>
+    <p>👉 Outline box से बाहर हट जाएगा।</p>
+    <hr>
+    <h2>💎 Focus Design (Important 🔥)</h2>
+    <p>Forms में professional focus effect:</p>
+    <pre><code class="language-css">outline: none;
+box-shadow: 0 0 5px blue;</code></pre>
+    <hr>
+
+    <h2>🎯 Quick Mini Demo</h2>
+    <div class="card">
+        <h3>Simple Card</h3>
+        <p>Yeh ek demo card hai jisme shadow effect hai.</p>
+        <button>Click Me</button>
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

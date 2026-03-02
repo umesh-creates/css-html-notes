@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css position property</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 25px;
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+
+        p {
+            background-color: rgb(248, 244, 244);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        em {
+            background-color: rgb(247, 243, 243);
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔥 CSS position Property</h1>
+    <hr>
+    <p>position property से हम तय करते हैं कि कोई element page पर कैसे और कहाँ place होगा।</p>
+    <h2>1️⃣ static (Default)</h2>
+    <p>👉 हर element का <b>default position: static;</b> होता है।<br>
+        👉 <b>top, bottom, left, right, z-index </b>काम नहीं करते।<br>
+        👉 Normal document flow follow करता है।</p>
+    <pre><code class="language-css">.box{
+  position: static;
+  top: 20px;   /* कोई effect नहीं */
+}</code></pre>
+    <b>👇👇👇 <br>static element को manually move नहीं कर सकते।</b>
+    <hr>
+    <h2>2️⃣ relative</h2>
+    <p>👉 Element अपनी original जगह से move होता है।
+        <br>
+        👉 लेकिन उसकी पुरानी जगह खाली नहीं होती (space reserve रहता है)।
+        <br>
+        👉 <b>top, left, right, bottom</b> काम करते हैं।
+    </p>
+    <pre><code class="language-css">.box{
+  position: relative;
+  top: 20px;
+  left: 30px;
+}</code></pre>
+    <p>
+        <b>🔎 समझो:</b>
+        <br>
+        👉 Element visually move होता है
+        <br>
+        👉 लेकिन layout disturb नहीं होता
+    </p>
+    <p><b>📌 Important Use:</b><br>
+        👉👉👉 Parent को <b>position: relative</b> देते हैं ताकि उसके अंदर का <b>absolute</b> element सही जगह position
+        हो सके।</p>
+    <hr>
+    <h2>3️⃣ absolute</h2>
+    <p>👉 Element normal flow से बाहर हो जाता है।
+        <br>
+        👉 यह अपने nearest positioned ancestor के अनुसार position होता है।
+        <br>
+        👉 अगर कोई positioned parent नहीं है → तो <b>body</b> के अनुसार position होगा।
+    </p>
+    <pre><code class="language-css">.parent{
+  position: relative;
+}
+
+.child{
+  position: absolute;
+  top: 0;
+  right: 0;
+}</code></pre>
+    <p><b>📌 Important: </b><br>
+        👉👉👉 Nearest positioned ancestor मतलब जिसका <b>position static</b> ना हो (<b>relative, absolute, fixed,
+            sticky</b>).</p>
+    <p><b>💀 Common Bug:</b> <br>
+        👉👉👉 अगर parent को position: relative नहीं दिया तो absolute element गलत जगह चला जाएगा।</p>
+    <hr>
+    <h2>4️⃣ fixed</h2>
+    <p>👉 Element viewport के अनुसार fix हो जाता है।
+        <br>
+        👉 Scroll करने पर भी अपनी जगह से नहीं हिलता।
+    </p>
+    <pre><code class="language-css">.navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}</code></pre>
+    <p><b>📌 Use:</b>
+        <br>
+        ▶ Sticky navbar
+        <br>
+        ▶ Floating button
+        <br>
+        ▶ Chat icon
+    </p>
+    <p><b>😂 Common Problem:</b>
+        fixed element नीचे के content के ऊपर आ सकता है।</p>
+    <p>Solution:</p>
+    <pre><code class="language-css">body{
+  padding-top: 60px;
+}</code></pre>
+    <hr>
+    <h2>5️⃣ sticky</h2>
+    <p>👉 यह <b>relative</b> और <b>fixed</b> का combination है।
+        <br>
+        👉 <b>scroll</b> होने तक <b>relative</b> जैसा behave करता है।
+        <br>
+        👉 एक point के बाद <b>fixed</b> जैसा behave करता है।
+    </p>
+    <pre><code class="language-css">.header{
+  position: sticky;
+  top: 0;
+}</code></pre>
+    <p><b>📌 Condition:</b>
+        <br>
+        👉 Parent के अंदर scroll होना चाहिए।
+        <br>
+        👉 top देना जरूरी है।
+    </p>
+    <p><b>😂 Common Bug:</b>
+        <br>
+        👉अगर parent पर overflow: hidden है तो sticky काम नहीं करेगा।
+        <br>
+        👉 Parent की height कम होगी तो भी problem होगी।
+    </p>
+    <hr>
+    <h1>🔥 Very Important Concept – <em>z-index</em></h1>
+    <p>👉 <b>z-index</b> stacking order control करता है।
+        <br>
+        👉 केवल positioned element पर काम करता है (<b>static</b> पर नहीं)।
+    </p>
+    <pre><code class="language-css">.box{
+  position: relative;
+  z-index: 10;
+}</code></pre>
+    <p>Bada <b>z-index</b>→ ऊपर दिखाई देगा।</p>
+    <hr>
+    <h1>🤣 Hidden Bugs (बहुत Important)</h1>
+    <h2>1️⃣ transform, filter, perspective Issue</h2>
+    अगर parent पर ये properties लगी हैं:
+    <b>
+        <ul>
+            <li>transform</li>
+            <li>filter</li>
+            <li>perspective</li>
+        </ul>
+    </b>
+    तो वह parent एक नया containing block बना देता है।<br><br>
+    इससे क्या होगा?
+    <ul>
+        <li>अंदर का <b>position: fixed</b> element viewport की जगह parent के अनुसार behave करेगा।</li>
+    </ul>
+    Example:
+    <pre><code class="language-css">.parent{
+  transform: scale(1);
+}
+
+.child{
+  position: fixed;
+  top: 0;
+}</code></pre>
+    <p>👉 यहाँ <b>fixed</b> element viewport से नहीं बल्कि parent से relate करेगा। <br>
+        👉 यह बहुत बड़ा hidden bug है।</p>
+    <hr>
+    <h2>2️⃣ overflow Problem</h2>
+    अगर parent पर:
+    <pre><code class="language-css">overflow: hidden;</code></pre><br>
+    तो:
+    <ul>
+        <li><b>absolute</b> element cut हो सकता है।</li>
+        <li><b>sticky</b> काम नहीं करेगा।</li>
+    </ul>
+    <hr>
+    <h2>3️⃣ Height Collapse Problem</h2>
+    अगर parent में height नहीं है और अंदर <b>absolute</b> element है: <br>
+    तो parent collapse हो जाएगा।
+    <br><br>
+    Solution: <br>
+    <ul>
+        <li>Parent को height दो</li>
+        <li>या clearfix technique use करो</li>
+    </ul>
+    <hr>
+    <h2>🔥 Summary Table</h2>
+    <table class="my-table">
+        <thead>
+            <tr>
+                <th>position</th>
+                <th>Behavior</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>static</td>
+                <td>default, move नहीं कर सकते</td>
+            </tr>
+            <tr>
+                <td>relative</td>
+                <td>original जगह से move</td>
+            </tr>
+            <tr>
+                <td>absolute</td>
+                <td>nearest positioned ancestor से relate</td>
+            </tr>
+            <tr>
+                <td>fixed</td>
+                <td>viewport से fix</td>
+            </tr>
+            <tr>
+                <td>sticky</td>
+                <td>scroll पर fix</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

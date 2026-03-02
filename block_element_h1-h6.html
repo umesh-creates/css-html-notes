@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>block element h1-h6</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        span {
+            color: green;
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        body {
+            margin: 40px;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .format {
+            background-color: rgb(40, 37, 37);
+            padding: 18px;
+            color: rgb(230, 217, 217);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔷 &lt;h1&gt; – &lt;h6&gt; Elements</h1>
+    <h2>🔹 Proper Name:</h2>
+    <p>Heading Elements</p>
+    <hr>
+    <h2>🔹 इनका work क्या है?</h2>
+    <p>इनका work होता है heading (शीर्षक) लिखना।</p>
+    <p>ये 6 level के होते हैं:</p>
+
+    <pre class="format">&lt;h1&gt; → सबसे बड़ा heading
+&lt;h2&gt;
+&lt;h3&gt;
+&lt;h4&gt;
+&lt;h5&gt;
+&lt;h6&gt; → सबसे छोटा heading</pre>
+    <h2>⚠️ ध्यान:</h2>
+    <p>&lt;h1&gt; सबसे important होता है (SEO में भी)।</p>
+    <hr>
+    <h1>🎨 Heading पर लगने वाली Important CSS Properties</h1>
+    <h2>1️⃣ color</h2>
+    <h2>👉 work:</h2>
+    <p>
+        Text का color बदलता है।
+    </p>
+    <pre><code class="language-css">color: 🟥red;
+</code></pre>
+    <hr>
+    <h2>
+        2️⃣ background-color
+    </h2>
+    <h2>
+        👉 work:
+    </h2>
+    <p>
+        Heading के पीछे background देता है।
+    </p>
+    <pre><code class="language-css">background-color: 🟨yellow;
+</code></pre>
+    <p>
+        ⚠️ यह पूरी width cover करता है क्योंकि heading block element है।
+    </p>
+    <hr>
+    <h2>3️⃣ font-size</h2>
+    <h2>👉 work:</h2>
+    <p>Text की size control करता है।</p>
+    <pre><code class="language-css">font-size: 40px;</code></pre>
+    <p>Default sizes (approx):</p>
+    <pre class="format">h1 → 32px
+    h2 → 24px
+    h3 → 18px</pre>
+    <hr>
+    <h2>4️⃣ font-weight</h2>
+    <h2>👉 work:</h2>
+    <p>Text को bold / normal करता है।</p>
+    <pre><code class="language-css">font-weight: normal;</code></pre>
+    <p>⚠️ Default में headings bold होती हैं।</p>
+    <hr>
+    <h2>5️⃣ text-align</h2>
+    <h2>👉 work:</h2>
+    <p>Text alignment change करता है।</p>
+    <pre><code class="language-css">text-align: center;
+        text-align: right;</code></pre>
+    <hr>
+    <h2>6️⃣ text-transform</h2>
+    <h2>👉 work:</h2>
+    <p>Text को uppercase / lowercase बनाता है।</p>
+    <pre><code class="language-css">text-transform: uppercase;</code></pre>
+    <hr>
+    <h2>7️⃣ letter-spacing</h2>
+    <h2>👉 work:</h2>
+    <p>Letters के बीच की spacing बदलता है।</p>
+    <pre><code class="language-css">letter-spacing: 3px;</code></pre>
+    <hr>
+    <h2>8️⃣ text-shadow</h2>
+    <h2>👉 work:</h2>
+    <p>Text के पीछे shadow देता है।</p>
+    <pre><code class="language-css">text-shadow: 2px 2px 5px gray;</code></pre>
+    <p>Format:</p>
+    <pre class="format">horizontal vertical blur color</pre>
+    <hr>
+    <h2>9️⃣ padding</h2>
+    <h2>👉 work:</h2>
+    <p>Heading के अंदर space देता है।</p>
+    <pre><code class="language-css">padding: 20px;</code></pre>
+    <hr>
+    <h2>🔟 margin</h2>
+    <h2>👉 work:</h2>
+    <p>Heading के बाहर space देता है।</p>
+    <pre><code class="language-css">margin: 20px 0;</code></pre>
+    <p>⚠️ Browser default margin देता है headings को।</p>
+    <hr>
+    <h2>1️⃣1️⃣ border</h2>
+    <h2>👉 work:</h2>
+    <p>Heading के चारों तरफ line देता है।</p>
+    <pre><code class="language-css">border-bottom: 3px solid red;</code></pre>
+    <p>Modern design में अक्सर bottom border use होता है।</p>
+    <hr>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

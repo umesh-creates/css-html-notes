@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity & Cascade</title>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            /* desktop */
+            /* padding: 15px  250px; */
+            /* mobile */
+            padding: 5px 15px;
+        }
+
+
+        hr {
+            height: 1px;
+            border: none;
+            background-color: black;
+        }
+
+        .output {
+            margin-top: 8px;
+            font-size: 15px;
+            color: #030303;
+            background: #efeded;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            border-radius: 6px;
+        }
+
+        /* p,
+        h2,
+        pre,
+        ul,
+        b  */
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            background-color: rgb(242, 237, 237);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Specificity & Cascade</h1>
+    <hr>
+    <h1>🔥 1️⃣ Specificity क्या है?</h1>
+    <p>जब <b>एक ही element पर कई CSS rules लग रहे हों,</b>
+        तो कौन सा rule apply होगा — यह तय करती है <b>Specificity।</b></p>
+    <h2>🏆 Priority Order (सबसे ज्यादा → सबसे कम)</h2>
+    <pre>⬇️!important
+⬇️Inline Style 
+⬇️ID Selector
+⬇️Class / Attribute / Pseudo-class
+⬇️Element / Pseudo-element
+⬇️Universal (*)
+</pre>
+    <hr>
+    <h2>📊 Number System से समझो (Professional तरीका)</h2>
+    <table class="my-table">
+        <tr>
+            <th>Selector Type</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Inline Style</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Id</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Class / Attribute / Pseudo-class</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Element / Pseudo-element</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Universal</td>
+            <td>0</td>
+        </tr>
+    </table>
+    <hr style="margin-top: 20px;">
+    <h2>🔥 Example 1 — Element vs Class</h2>
+    <pre><code class="language-html">&lt;p class="text"&gt; Hello &lt;/p&gt;</code></pre>
+    <pre><code class="language-css">p {
+  color: blue;   /* 1 */
+}
+
+.text {
+  color: red;    /* 10 */
+}</code></pre>
+    <p class="output">👉 Output: Red🟥 <br> क्यों?
+        Class (10) > Element (1)</p>
+    <hr>
+    <h2>🔥 Example 2 — Class vs ID</h2>
+    <pre><code class="language-html">&lt;p id="para" class="text"&gt;Hello&lt;/p&gt;</code></pre>
+    <pre><code class="language-css">.text {
+  color: blue;   /* 10 */
+}
+
+#para {
+  color: green;  /* 100 */
+}</code></pre>
+    <p class="output">👉 Output: Green 🟩<br>
+        क्यों? ID (100) > Class (10)</p>
+    <hr>
+    <h2>🔥 Example 2 — Class vs ID</h2>
+    <pre><code class="language-html">&lt;p id="para" class="text"&gt;Hello&lt;/p&gt;</code></pre>
+    <pre><code class="language-css">.text {
+  color: blue;   /* 10 */
+}
+
+#para {
+  color: green;  /* 100 */
+}</code></pre>
+    <p class="output">👉 Output: Green 🟩<br>क्यों? ID (100) > Class (10)</p>
+    <hr>
+    <h2>🔥 Example 3 — Inline Style</h2>
+    <pre><code class="language-html">&lt;p id="para" style="color: purple;"&gt;Hello&lt;/p&gt;</code></pre>
+    <pre><code class="language-css">#para {
+  color: red;
+}</code></pre>
+    <p class="output">👉 Output: Purple🟪 <br>क्यों? Inline (1000) > ID (100)</p>
+    <hr>
+    <h2>🔥 Example 4 — !important</h2>
+    <pre><code class="language-css">p {
+  color: blue !important;
+}
+
+#para {
+  color: red;
+}</code></pre>
+    <p class="output">👉 Output: Blue🟦 <br>
+        क्यों?
+        !important सबको हरा देता है।</p>
+    <hr>
+    <h1>🔥 2️⃣ Cascade क्या है?</h1>
+    <p>अगर specificity बराबर है,
+        तो <b>जो rule नीचे लिखा है वही apply होगा।</b></p>
+    <hr>
+    <h2>Example 5 — Same Selector</h2>
+    <pre><code class="language-css">p {
+  color: blue;
+}
+
+p {
+  color: red;
+}</code></pre>
+    <p class="output">👉 Output: Red🟥 <br>
+        क्यों?
+        Specificity same (1),
+        लेकिन red वाला rule नीचे है।</p>
+    <hr>
+    <h1>🔥 3️⃣ Equal Specificity Example</h1>
+    <pre><code class="language-html">&lt;p class="text"&gt;Hello&lt;/p&gt;</code></pre>
+    <pre><code class="language-css">.text {
+  color: blue;
+}
+
+.text {
+  color: green;
+}</code></pre>
+    <p class="output">👉 Output: Green🟩 <br>
+        क्यों?
+        Specificity same (10),
+        तो नीचे वाला apply हुआ।</p>
+    <hr>
+    <h1>🔥 4️⃣ Combined Specificity Example</h1>
+    <pre><code class="language-html">&lt;p id="para" class="text"&gt;Hello&lt;/p&gt;</code></pre>
+    <pre><code class="language-css">p.text {
+  color: blue;    /* 1 + 10 = 11 */
+}
+
+#para {
+  color: red;     /* 100 */
+}</code></pre>
+    <p class="output">👉 Output: Red🟥 <br>
+        क्यों?
+        100 > 11</p>
+    <hr>
+
+
+
+    <h1>🔥 Specificity केवल “priority list” नहीं है</h1>
+    <p>Specificity actually <b>4 column system</b> से calculate होती है।</p>
+    <p><b style="font-size: 20px;">Specificity Format:</b> (a, b, c, d)</p>
+    <table class="my-table">
+        <tr>
+            <th>Column</th>
+            <th>Meaning</th>
+        </tr>
+        <tr>
+            <td>a</td>
+            <td>Inline style</td>
+        </tr>
+        <tr>
+            <td>b</td>
+            <td>ID selectors</td>
+        </tr>
+        <tr>
+            <td>c</td>
+            <td>Class / Attribute / Pseudo-class</td>
+        </tr>
+        <tr>
+            <td>d</td>
+            <td>Element / Pseudo-element</td>
+        </tr>
+    </table>
+    <h2>🔥 Example 1 — Complex Selector</h2>
+    <pre><code class="language-css">#main p {
+  color: blue;
+}
+
+div .box p {
+  color: green;
+}</code></pre>
+    <b>First selector:</b>
+    <ul>
+        <li>ID = 1</li>
+        <li>Element = 1</li>
+        <li>Specificity → (0,1,0,1)</li>
+    </ul>
+    <b>Second selector:</b>
+    <ul>
+        <li>Class = 1</li>
+        <li>Element = 2</li>
+        <li>Specificity → (0,0,1,2)</li>
+    </ul>
+    <p class="output"><b>अब compare करो:</b>
+        ID column पहले compare होगा.
+        1 > 0 <br>
+        👉 इसलिए पहला rule जीतेगा (blue)🟦</p>
+    <hr>
+    <h2>🔥 Level 2: Important Rule — Left to Right नहीं, Column wise Compare</h2>
+    <pre><b>Comparison ऐसे होता है:</b><br>
+1️⃣ Inline compare
+2️⃣ ID compare
+3️⃣ Class compare
+4️⃣ Element compare <br>
+<b>जैसे dictionary में word compare करते हैं।</b>
+</pre>
+    <hr>
+    <h2>🔥 Level 3: Multiple Classes Example</h2>
+    <pre><code class="language-css">.box.active {
+  color: red;
+}</code></pre>
+    <b>Count:</b>
+    <ul>
+        <li>Class = 2 <br>Specificity → (0,0,2,0)</li>
+    </ul>
+    <p class="output">यह single class (0,0,1,0) से ज्यादा strong है।</p>
+    <hr>
+    <h2>🔥 Level 4: Attribute और Pseudo-class भी class category में आते हैं</h2>
+    <pre><code class="language-css">input[type="text"]:focus {
+  border: 2px solid blue;
+}</code></pre>
+    <b>Count:</b>
+    <ul>
+        <li>Element = 1 (input)</li>
+        <li>Attribute = 1</li>
+        <li>Pseudo-class = 1</li>
+    </ul>
+    <p><b>Specificity:</b> (0,0,2,1)</p>
+    <hr>
+    <h2>🔥 Level 5: Pseudo-elements कहाँ आते हैं?</h2>
+    <pre><code class="language-css">p::first-letter {
+  color: red;
+}</code></pre>
+    <ul>
+        <li>Pseudo-element = element category</li>
+    </ul>
+    <p><b>So: </b>(0,0,0,2)</p>
+    <hr>
+    <h2>🔥 Level 6: :is() और :where():is()</h2>
+    <ul>
+        <li>यह अपने अंदर के selector की specificity लेता है।</li>
+    </ul>
+    <pre><code class="language-css">:is(.box, #main) {
+  color: red;
+}</code></pre>
+    <ul>
+        <li type="square">अगर #main match हुआ → specificity = ID वाली</li>
+    </ul>
+    <hr>
+    <h2>:where()</h2>
+    <p>⚠️ Specificity = 0</p>
+    <pre><code class="language-css">:where(.box) {
+  color: red;
+}</code></pre>
+    <p>Specificity = (0,0,0,0)</p>
+    <b>इसलिए इसे override करना आसान है।</b>
+    <hr>
+    <h1>🔥 Level 7: Cascade Deep Rule</h1>
+    <pre> <b>Order of importance actually यह है:</b> <br>
+1️⃣ !important
+2️⃣ Origin (User > Author > Browser default)
+3️⃣ Specificity
+4️⃣ Source order (नीचे वाला)
+</pre>
+
+
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css overflow properties</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 25px;
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+
+        .para {
+            background-color: rgb(244, 239, 239);
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 10px;
+            line-height: 1.4;
+        }
+
+        .bold {
+            font-size: large;
+        }
+
+        .demo-visible,
+        .demo-hidden,
+        .demo-scroll,
+        .demo-auto,
+        .demo-xy,
+        .demo-xy-mixed,
+        .demo-clip,
+        .demo-nowrap,
+        .demo-ellipsis {
+            /* overflow: visible; default */
+            border: 2px solid black;
+            padding: 4px;
+            width: 50vw;
+            height: 20vh;
+            overflow: hidden;
+            /*karana pada for demo-visible*/
+        }
+
+        .demo-hidden {
+            overflow: hidden;
+        }
+
+        .demo-scroll {
+            overflow: scroll;
+        }
+
+        .demo-auto {
+            overflow: auto;
+        }
+
+        .demo-xy {
+            overflow-x: scroll;
+            overflow-y: scroll;
+        }
+
+        .demo-xy-mixed {
+            overflow: scroll scroll;
+        }
+
+        .demo-clip {
+            overflow: hidden;
+        }
+
+        .demo-nowrap {
+            white-space: nowrap;
+        }
+
+        .demo-ellipsis {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📦 CSS overflow Properties</h1>
+    <hr>
+    <h2>🔹 overflow क्या होता है?</h2>
+    <p class="para">जब किसी <b>box</b> (जैसे div, container) के अंदर का content उसकी fixed <b>width</b> या <b>height</b>
+        से बड़ा हो जाता है, तब extra हिस्सा बाहर निकलने लगता है।
+        उसी extra हिस्से को control करने के लिए <b>overflow</b> property का उपयोग किया जाता है।</p>
+    <hr>
+    <h2>1️⃣ overflow: visible;</h2>
+    <pre><code class="language-css">overflow: visible;</code></pre>
+    <p>📌 यह default value है।</p>
+    <p>👉 content बाहर भी दिखाई देगा <br>👉 कोई scroll bar नहीं आएगा <br>👉 content कट नहीं होगा</p>
+    <p>🧠 याद रखने की ट्रिक:</p>
+    <p><b>visible = </b><b class="bold">सब दिखाओ, चाहे बाहर निकले</b></p>
+    <h3>Example</h3>
+    <p class="demo-visible">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas libero, tempora eveniet
+        perspiciatis velit dolorum distinctio magni nostrum esse nulla labore? Reprehenderit quas dolor explicabo alias
+        autem, nostrum sunt reiciendis, ipsam odit molestias aspernatur at aliquid doloremque impedit pariatur quae
+        labore eaque aut ullam. Voluptates nulla voluptatum corporis accusamus laborum ipsa cupiditate et dolore,
+        pariatur maiores asperiores blanditiis culpa consectetur ex sed perspiciatis eius itaque! Minus ullam quis et,
+        dolore exercitationem eveniet repellat ab numquam quidem cupiditate dignissimos provident qui! Incidunt deleniti
+        tenetur omnis ducimus quas consequuntur ullam hic nesciunt aliquam molestias necessitatibus officia, illo aut
+        eum praesentium! Sequi nulla voluptate voluptates architecto magnam fuga quae similique commodi itaque? Sed, rem
+        cupiditate reprehenderit saepe aliquid neque atque minus blanditiis? Non quasi quisquam consectetur placeat
+        libero vitae hic nam provident dolorum, dolores nisi nesciunt laborum corporis consequatur voluptatem sunt
+        laboriosam, eum eveniet, quos illo amet maxime. Voluptate facilis commodi dolores maiores praesentium blanditiis
+        qui mollitia est nesciunt, aspernatur rem laudantium provident ducimus ipsum eum id adipisci, nulla eveniet
+        quaerat! Accusamus iste minima quos dolorum, voluptatum asperiores animi quo exercitationem tempora voluptas,
+        aut vero illo aliquid quia veniam. Labore mollitia commodi, excepturi sequi, temporibus dolor placeat obcaecati
+        soluta quod provident quibusdam reprehenderit?</p>
+    <hr>
+    <h2>2️⃣ overflow: hidden;</h2>
+    <pre><code class="language-css">overflow: hidden;</code></pre>
+    <p>👉 extra content कट जाएगा<br>
+        👉 scroll bar नहीं आएगा<br>
+        👉 केवल box के अंदर का हिस्सा दिखेगा</p>
+    <p>🧠 याद रखने की ट्रिक:</p>
+    <p><b>hidden = </b><b class="bold">जो बाहर गया, वह गायब</b></p>
+    <h3>Example</h3>
+    <p class="demo-hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis doloribus deleniti non
+        expedita praesentium rem eaque velit illo ipsum magni nesciunt cumque consequuntur voluptatem, illum atque
+        beatae nemo explicabo perferendis iusto! Nostrum aspernatur dolores consectetur optio earum vitae labore atque
+        inventore. Architecto nisi eum ea cumque voluptatem saepe debitis voluptate pariatur maiores explicabo, quis sit
+        porro quidem consequuntur incidunt dicta obcaecati ipsam vero praesentium et adipisci. Cumque minus totam
+        accusamus, provident hic autem dolores perferendis. Dicta libero earum quibusdam dolores laboriosam laudantium
+        aliquid consequatur, harum sunt ut dolore molestiae voluptatem veniam facere quos, sequi qui sint consectetur
+        doloribus. Magnam quibusdam impedit molestias cupiditate officiis nulla, laboriosam aspernatur quas provident ad
+        beatae accusamus, magni ipsum veritatis asperiores possimus nobis rem veniam porro, totam facilis placeat
+        dolorem aliquam? Aliquid similique nesciunt tempora illo earum facere natus, voluptate itaque libero reiciendis
+        perferendis maiores odit aliquam commodi, quaerat reprehenderit possimus repellat. Quasi amet voluptatibus autem
+        itaque, quae sit vitae ea doloremque quis consequatur delectus vero ipsam voluptate nulla deserunt, iusto
+        perspiciatis excepturi provident porro pariatur vel et. Fugit amet deleniti itaque assumenda nulla autem quo
+        necessitatibus nemo dicta sapiente. Porro nam totam dolorem, ullam, quia facere dolores iusto debitis, nesciunt
+        eligendi iste nobis obcaecati!</p>
+    <hr>
+    <h2>3️⃣ overflow: scroll;</h2>
+    <pre><code class="language-css">overflow: scroll;</code></pre>
+    <p>👉 हमेशा scroll bar दिखाई देगा<br>
+        👉 चाहे content छोटा हो या बड़ा<br>
+        👉 vertical और horizontal दोनों scroll आ सकते हैं</p>
+    <p>🧠 याद रखने की ट्रिक:</p>
+    <p><b>scroll = </b><b class="bold">जबरदस्ती scroll दिखाओ</b></p>
+    <h3>Example</h3>
+    <p class="demo-scroll">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae corporis ex laborum tenetur,
+        quis commodi culpa nemo! Incidunt aspernatur nihil molestias fuga ipsum quae recusandae doloribus reiciendis
+        consequatur repudiandae in dolores eaque cum, expedita aliquam natus ducimus, nisi ipsam? Enim nam voluptates
+        voluptas sunt dicta doloremque maxime quidem possimus, totam delectus explicabo nesciunt fuga repellendus quod
+        omnis adipisci quaerat? Inventore maiores expedita nesciunt laudantium numquam dolorum similique, facere
+        provident placeat laborum aliquam velit quae temporibus iure aspernatur molestiae saepe vitae dolor libero
+        repellat? Eaque, sequi nobis cumque officiis velit laborum eos magnam, numquam odio enim repudiandae. Sunt et
+        quidem mollitia, laboriosam cum laborum esse! At nulla alias corporis magni rem earum fuga. Ipsum aperiam, esse
+        cum maxime eligendi tempora quaerat minima asperiores fugiat. Fuga minus ab totam sit harum placeat, cum
+        voluptatem asperiores similique architecto nam nihil ad, culpa reiciendis repellat ratione dolorem facere. Aut
+        eos dolore ipsa illo quidem veniam amet obcaecati fugit quas delectus magni nobis, dolorem labore quam facere
+        illum et neque dignissimos unde nemo hic possimus animi voluptate. Aspernatur, fuga facilis consectetur neque,
+        debitis dolorum voluptatibus ullam autem corporis ut soluta qui esse, repellendus voluptate officia dicta.
+        Aliquid, optio. Aliquam, suscipit nihil laborum debitis ducimus id?</p>
+    <hr>
+    <h2>4️⃣ overflow: auto;</h2>
+    <pre><code class="language-css">overflow: auto;</code></pre>
+    <p>👉 जब content बड़ा होगा तभी scroll bar आएगा<br>
+        👉 अगर content fit है तो scroll नहीं आएगा</p>
+    <p>🧠 याद रखने की ट्रिक:</p>
+    <p><b>auto = </b><b class="bold">जरूरत पड़ी तो scroll</b></p>
+    <p>📌 यह सबसे ज्यादा उपयोग होने वाली value है।</p>
+    <h3>Example</h3>
+    <p class="demo-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, blanditiis aperiam magni
+        reprehenderit officiis ipsam molestiae fuga hic eum! Exercitationem incidunt voluptatibus libero nesciunt dolore
+        aut veniam praesentium, inventore corporis, beatae aperiam facere architecto earum modi esse optio delectus
+        dolorem quia explicabo, odio magnam? Fuga eligendi voluptatum quas, aperiam doloremque eum maiores voluptas
+        quasi veniam perferendis similique quae harum, nobis eius eaque nostrum, dolorem voluptate illum placeat itaque.
+        Quam eligendi sequi dignissimos aspernatur aut, ab maxime omnis repudiandae at? Autem, quia, corporis facilis
+        iure illo rem unde consequatur laboriosam, explicabo earum facere sunt labore accusantium veritatis possimus
+        saepe sed commodi necessitatibus. Molestias repellat perspiciatis eos sed sunt ducimus reiciendis placeat
+        debitis explicabo. Iure eos id eveniet modi fugiat enim labore repellendus vel voluptate, ducimus possimus quos
+        quis, rerum provident. Sapiente laborum explicabo vero nam numquam! Quae quis soluta voluptatem perspiciatis ut
+        possimus aut magnam neque maiores asperiores deleniti facere fugiat totam, ab veritatis amet! Ut eius eveniet
+        possimus. Sapiente quibusdam est voluptas vitae aliquid nostrum! Repellendus, natus. Doloribus maxime minus
+        quidem repellat, nisi quam perspiciatis facilis natus error fugit suscipit laboriosam. Consequuntur, ducimus
+        tempora corporis sint itaque rem recusandae dolore, excepturi quam vel consectetur eius fuga blanditiis
+        consequatur quo. Eligendi.</p>
+    <hr>
+    <h2>🎯 Direction Control</h2>
+    <p>कभी-कभी हमें केवल एक दिशा में overflow control करना होता है।</p>
+    <hr>
+    <h2>🔹 overflow-x</h2>
+    <pre><code class="language-css">overflow-x: hidden;</code></pre>
+    <p>👉 यह horizontal दिशा को control करता है।</p>
+    <hr>
+    <h2>🔹 overflow-y</h2>
+    <pre><code class="language-css">overflow-y: auto;</code></pre>
+    <p>👉 यह vertical दिशा को control करता है।</p>
+    <h3>Example</h3>
+    <p class="demo-xy">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt mollitia reiciendis
+        repudiandae cumque, necessitatibus tenetur ipsa voluptas facere porro iste! Mollitia fugit numquam
+        necessitatibus deleniti amet expedita eos consectetur fugiat rerum accusantium. Ab, inventore sunt? Tenetur,
+        officia. Doloribus eos nulla aliquid cupiditate tenetur aliquam doloremque accusantium accusamus, nemo eveniet.
+        Laboriosam cumque dolorum quas repellat ad mollitia. Nam autem quidem cumque rem nostrum pariatur, inventore
+        magni amet omnis voluptate? Cum minima porro, beatae quos quia ratione iusto culpa deleniti totam ut,
+        repellendus delectus illum provident, ab voluptates alias earum. Placeat ea a saepe quis. Soluta iste quos fugit
+        exercitationem! Nihil, laudantium et. Ipsam officia, sequi amet ducimus necessitatibus earum itaque nemo eaque,
+        ullam quae iure explicabo suscipit quasi enim quos pariatur excepturi autem. Id in culpa libero corporis
+        inventore iusto incidunt officiis eum, quod illo nesciunt, tenetur repellendus necessitatibus quibusdam
+        consequatur optio accusantium voluptas amet facilis nisi nobis asperiores neque? Mollitia incidunt, voluptatum
+        nihil voluptas vel accusamus. Excepturi sequi similique ab molestias, cum tenetur quo itaque ipsam! Mollitia
+        assumenda, ad quasi neque quas repellat esse vitae iste animi quis, porro saepe reiciendis, quibusdam id
+        deleniti architecto. Vel ad, quibusdam asperiores impedit aliquid libero distinctio? Dolore harum tenetur
+        aliquam! Itaque, odio veniam.</p>
+    <hr>
+    <h2>⚡ Quick Revision Table</h2>
+    <table class="my-table">
+        <tr>
+            <th>overflow value</th>
+            <th>क्या करेगा</th>
+        </tr>
+
+        <tr>
+            <td>visible</td>
+            <td>बाहर का content भी दिखेगा</td>
+        </tr>
+
+        <tr>
+            <td>hidden</td>
+            <td>extra content कट</td>
+        </tr>
+
+        <tr>
+            <td>scroll</td>
+            <td>हमेशा scroll</td>
+        </tr>
+
+        <tr>
+            <td>auto</td>
+            <td>जरूरत पर scroll</td>
+        </tr>
+
+    </table>
+    <hr>
+    <h2>5️⃣ overflow: x y;</h2>
+    <p>यह एक साथ overflow-x और overflow-y को control करता है।</p>
+    <h3>Structure</h3>
+    <pre><code class="language-css">overflow: x-value y-value;</code></pre>
+    <h3>Example</h3>
+    <pre><code class="language-css">overflow: hidden auto;</code></pre>
+    <p>👉 hidden = horizontal (x-value) <br>
+        👉 auto = vertical (y-value)</p>
+    <h3>Example</h3>
+    <p class="demo-xy-mixed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus maxime reiciendis
+        iusto cupiditate nihil pariatur, laborum eos, ipsa facilis quasi eum praesentium! Dolore, vel! Voluptatem cum
+        animi enim cumque architecto mollitia, quasi dolorum autem voluptatum fuga reprehenderit, ipsa exercitationem,
+        accusamus aliquam! Rem dolore sapiente, temporibus facilis natus perspiciatis. Nemo repellat impedit sed quidem
+        labore expedita dolorum repellendus tenetur? Quisquam quas dolorem inventore consectetur vel nihil deserunt
+        accusamus eligendi laboriosam iusto, commodi libero sapiente! Delectus error id vel fuga, optio itaque deleniti
+        tempora similique nihil illum et praesentium veritatis sunt sint suscipit rerum, laudantium aliquid voluptatem
+        reprehenderit laboriosam adipisci ipsam neque excepturi. Commodi ratione culpa sed architecto voluptate, ipsa
+        cupiditate aut alias nesciunt reprehenderit quis modi tenetur ad sunt similique incidunt accusamus recusandae
+        unde ex veniam temporibus adipisci nihil suscipit. Corporis nostrum dolorem perferendis voluptate, rem ullam
+        deleniti sunt quia odit voluptatum, architecto itaque incidunt veniam nemo facere! Dolorum aut repudiandae
+        accusamus quos, aliquid est. Eaque praesentium repellendus, commodi ut corporis cumque officiis debitis ducimus
+        modi sit voluptatibus enim in voluptatem accusantium cum nam natus esse sint quasi voluptate minus? Doloribus,
+        nisi. Vero quae, dolores quasi officiis facere itaque? Eum excepturi in et tenetur sit? Quae vel minus qui est.
+        Delectus.</p>
+    <hr>
+    <h2>6️⃣ overflow: clip;</h2>
+    <pre><code class="language-css">overflow: clip;</code></pre>
+    <p>👉 extra content कट जाएगा<br>
+        👉 scroll नहीं आएगा<br>
+        👉 scroll system बनेगा भी नहीं</p>
+    <h3>Example</h3>
+    <p class="demo-clip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum facilis autem sit, adipisci
+        doloribus illum dolor ad quibusdam vitae veniam quasi officia praesentium harum corrupti nisi cupiditate
+        doloremque blanditiis qui voluptates. Numquam similique tenetur animi. Ratione provident tenetur autem aliquid
+        magnam saepe nostrum, cumque porro impedit, odio excepturi inventore illo sed. Officia hic id nobis sequi,
+        laborum doloremque repellat, eaque accusamus eius doloribus tempora libero similique cupiditate amet temporibus
+        iusto, voluptatem explicabo! Laudantium repellat rem optio, blanditiis, sed dolores temporibus incidunt quo
+        necessitatibus saepe cupiditate odio architecto quis nemo animi placeat, aliquid soluta tempore cum. Sint,
+        dolorem qui, sed dolore sequi unde adipisci a fuga architecto illum ullam quas? Omnis dolores, aut est
+        asperiores vitae aliquid maxime ipsum voluptates id explicabo. Voluptates, dolores eius. Corporis error quo
+        nulla, architecto incidunt dignissimos blanditiis numquam vel sequi ipsam repudiandae perspiciatis alias
+        repellat, odit, assumenda libero hic aspernatur eaque maxime nobis fuga dolorum aliquam. Animi accusamus
+        delectus doloremque suscipit possimus molestias fugit tempore ea laboriosam quod, ex iste saepe repellat nam
+        quisquam fugiat numquam vitae magni adipisci, aliquid voluptatem consequuntur aut unde? Ab porro assumenda eos
+        at quasi laboriosam. Omnis necessitatibus ipsam soluta praesentium aliquid expedita facilis dignissimos,
+        nostrum, odit suscipit asperiores placeat!</p>
+    <h2>hidden और clip में फर्क</h2>
+    <table class="my-table">
+        <tr>
+            <th>hidden</th>
+            <th>clip</th>
+        </tr>
+        <tr>
+            <td>content कट</td>
+            <td>content कट</td>
+        </tr>
+        <tr>
+            <td>scroll possible</td>
+            <td>scroll impossible</td>
+        </tr>
+        <tr>
+            <td>scroll system रहता है</td>
+            <td>scroll system नहीं बनता</td>
+        </tr>
+    </table>
+    <p>🧠 आसान भाषा में: <b>clip ज्यादा strict है</b></p>
+    <hr>
+    <h2>7️⃣ white-space: nowrap;</h2>
+    <p>Normally text खुद नीचे आ जाता है।</p>
+    <p>लेकिन:</p>
+    <pre><code class="language-css">white-space: nowrap;</code></pre>
+    <p>👉 text एक ही line में रहेगा<br>
+        👉 नीचे नहीं जाएगा<br>
+        👉 पूरा लंबा फैल जाएगा</p>
+    <hr>
+    <h3>Example</h3>
+    <p class="demo-nowrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero odit veritatis dolorem
+        obcaecati velit fugiat distinctio voluptas quae, sunt perferendis et magnam doloremque labore eveniet
+        necessitatibus. Illum, modi ab? Qui optio, hic magni nihil expedita mollitia quis praesentium, ullam voluptates
+        ipsa rem perspiciatis distinctio, molestias delectus? Corrupti consectetur magnam voluptas cupiditate. Animi
+        nihil iure quas voluptatum sint at mollitia velit, voluptatibus, temporibus dolorum ad doloribus perspiciatis
+        vero facere veniam esse quod unde quae iste illum suscipit tempora soluta consequuntur! Dolor possimus ipsa
+        natus dicta unde ea? Iste illum minima voluptate corporis impedit perspiciatis quis porro assumenda reiciendis
+        asperiores inventore dolores necessitatibus, natus quod doloribus esse eveniet, ratione facilis, magnam soluta
+        minus quia sint aliquam aspernatur! Repudiandae vel libero qui earum necessitatibus architecto? Maxime
+        cupiditate rem quo quisquam excepturi pariatur minima et corrupti impedit quaerat, ipsum officia praesentium ea
+        est eos dolorum nobis laboriosam at. Distinctio porro nemo esse deserunt accusantium ea quasi quam id at,
+        tempora amet voluptatem nisi iste fuga qui, atque nesciunt voluptatibus nulla voluptates doloribus. Accusantium
+        eaque unde magnam, nulla placeat possimus culpa sapiente ipsum distinctio animi quidem ipsam consectetur, quas
+        perferendis illum blanditiis quia dolorem! Accusamus, maxime velit ducimus optio aut labore dolorem! Aperiam,
+        ducimus doloribus.</p>
+    <hr>
+    <h2>8️⃣ text-overflow: ellipsis;</h2>
+    <p>⚠️ यह अकेले काम नहीं करता</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;इसे 3 चीज़ें साथ चाहिए:</p>
+    <pre><code class="language-css">white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;</code></pre>
+    <h3>यह क्या करता है?</h3>
+    <p>अगर text box से बड़ा है:</p>
+    <p>👉 text कट जाएगा<br>
+        👉 अंत में तीन बिंदु (...) आ जाएंगे</p>
+    <h3>Example</h3>
+    <p class="demo-ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolores in eligendi
+        minima voluptatum tempore placeat id adipisci, facere odit sapiente ut dolor veniam velit. Accusantium expedita
+        voluptatum totam veritatis sunt? Beatae architecto perspiciatis cum odio error iste illo quo eveniet reiciendis
+        delectus? Sed, asperiores corrupti? Soluta maiores eaque corporis sed harum, fuga delectus explicabo modi quae,
+        aspernatur, possimus commodi. Voluptates expedita adipisci dolorem magnam vero rerum fugiat ducimus eligendi hic
+        sit architecto, non perferendis iure porro repellendus in sint, molestiae quibusdam consequatur voluptas dolores
+        quos! Obcaecati voluptates harum, rem iusto nisi quasi illo asperiores repudiandae necessitatibus repellat atque
+        sed minus praesentium unde animi nam exercitationem fuga excepturi? Quam quidem error dolore maxime tempore,
+        culpa provident vitae iure iusto, amet mollitia consectetur quia, doloremque dolor incidunt aliquid dolorem aut
+        unde dolores non quos. Sunt debitis nesciunt laudantium! Et dicta repellendus eaque dolor porro laboriosam
+        doloremque ipsam incidunt temporibus harum! Laborum dolor ea quod autem eum animi, temporibus ab, odit,
+        molestias consequuntur maiores quas natus sapiente ex laboriosam dolores magnam. Illum, dolores similique?
+        Molestias labore optio exercitationem iste inventore explicabo quae distinctio? Ducimus consequuntur animi,
+        quaerat adipisci nihil molestiae beatae corporis totam accusamus eos non sapiente soluta quidem illo, est in!
+    </p>
+    <h3>⚠️ Common गलती</h3>
+    <p>लोग लिखते हैं:</p>
+    <pre><code class="language-css">overflow: ellipsis;</code></pre>
+    <p>❌ यह गलत है</p>
+    <p>सही property है:</p>
+    <pre><code class="language-css">text-overflow: ellipsis;</code></pre>
+    <hr>
+    <h2>🎯 सबका आसान कनेक्शन</h2>
+    <table class="my-table">
+        <tr>
+            <th>Property</th>
+            <th>क्या काम</th>
+        </tr>
+        <tr>
+            <td>overflow: hidden auto;</td>
+            <td>x कट, y scroll</td>
+        </tr>
+        <tr>
+            <td>overflow: clip;</td>
+            <td>कट, बिना scroll</td>
+        </tr>
+        <tr>
+            <td>white-space: nowrap;</td>
+            <td>text एक line में</td>
+        </tr>
+        <tr>
+            <td>text-overflow: ellipsis;</td>
+            <td>तीन बिंदु (...)</td>
+        </tr>
+    </table>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>
