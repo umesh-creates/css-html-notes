@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 25px;
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+        li{
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+<h1>🔥 CSS Variables (Custom Properties)</h1>
+<p>CSS में <b>variable</b> को <b>custom property</b> भी कहते हैं।<br>
+इनका उपयोग एक ही value को बार-बार लिखने से बचने के लिए किया जाता है।</p>
+    <hr>
+<h2>1️⃣ Variable क्या होता है?</h2>
+<p>Variable एक नाम होता है जिसमें हम कोई value store करते हैं<br>
+(जैसे color, font-size, margin आदि)।</p>
+<p>बाद में हम उसी value को अलग-अलग जगह use कर सकते हैं।</p>
+<hr>
+<h2>2️⃣ Variable का Syntax</h2>
+<h3>🔹 Declare करने का तरीका</h3>
+<pre><code class="language-css">--variable-name: value;</code></pre>
+<h3>🔹 Use करने का तरीका</h3>
+<pre><code class="language-css">var(--variable-name)</code></pre>
+<hr>
+<h2>3️⃣ Global Variable (Universal Variable)</h2>
+<p>यह पूरी website में हर जगह use किया जा सकता है।</p>
+<p>इसे हम <b>:root</b> के अंदर define करते हैं।</p>
+<pre><code class="language-css">:root {
+  --main-color: blue;
+  --font-size: 20px;
+}
+
+h1 {
+  color: var(--main-color);
+  font-size: var(--font-size);
+}
+
+p {
+  color: var(--main-color);
+}</code></pre>
+<h3>📌 याद रखने वाली बात:</h3>
+<ul>
+    <li><b>:root</b> = पूरी website</li>
+    <li>यहाँ define किया गया variable हर element में काम करेगा</li>
+</ul>
+<hr>
+<h2>4️⃣ Local Variable</h2>
+<p>यह सिर्फ एक खास element के अंदर ही काम करता है।</p>
+<pre><code class="language-css">.box {
+  --box-color: red;
+  background-color: var(--box-color);
+}
+
+p {
+  color: var(--box-color);  /* यह काम नहीं करेगा */
+}</code></pre>
+<h2>📌 याद रखने वाली बात:</h2>
+<ul>
+    <li><b>.box</b> के अंदर define किया गया variable सिर्फ <b>.box</b> के अंदर चलेगा</li>
+    <li>बाहर use नहीं कर सकते</li>
+</ul>
+<hr>
+<h2>5️⃣ Main Difference</h2>
+<table class="my-table">
+    <tr>
+        <th>Type</th>
+        <th>कहाँ define होता है</th>
+        <th>कहाँ use होता है</th>
+    </tr>
+    <tr>
+        <td>Global Variable</td>
+        <td><b>:root</b> के अंदर</td>
+        <td>पूरी website में</td>
+    </tr>
+    <tr>
+        <td>Local Variable</td>
+        <td>किसी element के अंदर</td>
+        <td>सिर्फ उसी element में</td>
+    </tr>
+</table>
+<hr>
+<h2>6️⃣ Fallback Value (जरूरी जानकारी)</h2>
+<p>अगर variable नहीं मिले तो backup value दे सकते हैं:</p>
+<pre><code class="language-css">color: var(--text-color, black);</code></pre>
+<p>अगर --text-color नहीं मिला तो black apply होगा।</p>
+<hr>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>
