@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html entities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 10px 320px;
+        }
+
+        @media (max-width: 426px) {
+            body {
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 769px) {
+            body {
+                margin: 15px;
+            }
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+            background-color: rgb(244, 240, 240);
+            padding: 12px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+
+        span {
+            background-color: rgb(245, 241, 241);
+            border-radius: 4px;
+            padding-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔥 HTML Entities</h1>
+    <h3>✅ HTML Entities क्या होती हैं?</h3>
+    <p>कुछ characters HTML में <b>direct लिखने पर समस्या पैदा करते हैं।</b>
+    </p>
+    <p>जैसे:</p>
+    <pre>&lt;    &gt;</pre>
+    <h2>⭐ सबसे ज़रूरी HTML Entities</h2>
+    <table class="my-table">
+        <tr>
+            <th>Symbol</th>
+            <th>Entity Code</th>
+            <th>Number Code</th>
+            <th>उपयोग</th>
+        </tr>
+        <tr>
+            <td>&lt;</td>
+            <td>&amp;lt;</td>
+            <td>&amp;#60;</td>
+            <td>Less Than</td>
+        </tr>
+        <tr>
+            <td>&gt;</td>
+            <td>&amp;gt;</td>
+            <td>&amp;#62;</td>
+            <td>Greater Than</td>
+        </tr>
+        <tr>
+            <td>&amp;</td>
+            <td>&amp;amp;</td>
+            <td>&amp;#38;</td>
+            <td>And Symbol</td>
+        </tr>
+        <tr>
+            <td>"</td>
+            <td>&amp;quot;</td>
+            <td>&amp;#34;</td>
+            <td>Double Quote</td>
+        </tr>
+        <tr>
+            <td>'</td>
+            <td>&amp;apos;</td>
+            <td>&amp;#39;</td>
+            <td>Single Quote</td>
+        </tr>
+        <tr>
+            <td>©</td>
+            <td>&amp;copy;</td>
+            <td>&amp;#169;</td>
+            <td>Copyright</td>
+        </tr>
+        <tr>
+            <td>®</td>
+            <td>&amp;reg;</td>
+            <td>&amp;#174;</td>
+            <td>Registered</td>
+        </tr>
+        <tr>
+            <td>™</td>
+            <td>&amp;trade;</td>
+            <td>&amp;#8482;</td>
+            <td>Trademark</td>
+        </tr>
+        <tr>
+            <td>₹</td>
+            <td>—</td>
+            <td>&amp;#8377;</td>
+            <td>Rupee</td>
+        </tr>
+        <tr>
+            <td>€</td>
+            <td>&amp;euro;</td>
+            <td>&amp;#8364;</td>
+            <td>Euro</td>
+        </tr>
+        <tr>
+            <td>£</td>
+            <td>&amp;pound;</td>
+            <td>&amp;#163;</td>
+            <td>Pound</td>
+        </tr>
+        <tr>
+            <td>Space</td>
+            <td>&amp;nbsp;</td>
+            <td>—</td>
+            <td>Extra Space</td>
+        </tr>
+    </table>
+<hr>
+    <h1><span>&lt;code&gt;</span> Tag</h1>
+    <h3>✅ <span>&lt;code&gt;</span> Tag क्या है?</h3>
+    <p><span>&lt;code&gt;</span> tag का उपयोग programming code दिखाने के लिए किया जाता है।</p>
+    <h3>⭐ Basic Example</h3>
+    <p>Use <b>&lt;code&gt; print() &lt;/code&gt;</b> function in Python.</p>
+    <pre><code class="language-py">print("hello")</code></pre>
+    <p>अगर multiple lines का code दिखाना हो तो <br>
+        <span>&lt;pre&gt;</span> और <span>&lt;code&gt;</span> tag को साथ में उपयोग करते हैं।
+    </p>
+    <pre><code>&lt;pre&gt;
+&lt;code&gt;
+function hello() {
+  alert("Hello World");
+}
+&lt;/code&gt;
+&lt;/pre&gt;</code></pre>
+    <hr>
+    <h2>🔥 &lt;code&gt; और &lt;pre&gt; में अंतर</h2>
+    <table class="my-table">
+        <tr>
+            <th>Tag</th>
+            <th>उपयोग</th>
+        </tr>
+        <tr>
+            <td>&lt;code&gt;</td>
+            <td>छोटा code snippet दिखाने के लिए</td>
+        </tr>
+        <tr>
+            <td>&lt;pre&gt;</td>
+            <td>Spaces और line breaks को preserve करने के लिए</td>
+        </tr>
+        <tr>
+            <td>&lt;pre&gt;&lt;code&gt;</td>
+            <td>Proper multi-line code block दिखाने के लिए</td>
+        </tr>
+    </table>
+<hr>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>
