@@ -280,6 +280,24 @@
         .container-align-content .item {
             border: 2px solid rgb(247, 6, 6);
         }
+
+        .btn {
+            text-decoration: none;
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        /* hover effect */
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
     </style>
 </head>
 
@@ -758,92 +776,92 @@ grid-auto-columns: value;</code></pre>
   grid-auto-rows: 80px;
 }</code></pre>
     </details>
-<h3>क्या होगा</h3>
-<ul>
-  <li>2 column बनेंगे</li>
-  <li>अगर items ज्यादा होंगे तो <b>नई rows बनेंगी</b></li>
-  <li>हर नई row की height <b>80px होगी</b></li>
-</ul>
-<hr>
-<h2>14. place-items</h2>
-<h3>क्या करता है</h3>
-<p>यह <b>2 properties का shortcut</b> है।</p>
-<pre>align-items
+    <h3>क्या होगा</h3>
+    <ul>
+        <li>2 column बनेंगे</li>
+        <li>अगर items ज्यादा होंगे तो <b>नई rows बनेंगी</b></li>
+        <li>हर नई row की height <b>80px होगी</b></li>
+    </ul>
+    <hr>
+    <h2>14. place-items</h2>
+    <h3>क्या करता है</h3>
+    <p>यह <b>2 properties का shortcut</b> है।</p>
+    <pre>align-items
 justify-items</pre>
-<p>यानि grid item को <b>cell के अंदर center या other position में रखने के लिए।</b></p>
-<h3>Syntax</h3>
-<pre><code class="language-css">place-items: align justify;</code></pre>
-<h3>Example</h3>
-<pre><code class="language-css">.container{
+    <p>यानि grid item को <b>cell के अंदर center या other position में रखने के लिए।</b></p>
+    <h3>Syntax</h3>
+    <pre><code class="language-css">place-items: align justify;</code></pre>
+    <h3>Example</h3>
+    <pre><code class="language-css">.container{
   display: grid;
   height: 200px;
   place-items: center;
 }</code></pre>
-<h3>Result</h3>
-<p>Grid के सारे items <b>cell के बिल्कुल center में आ जाएंगे।</b></p>
-<h3>Common values</h3>
-<table class="my-table">
-  <tr>
-    <th>value</th>
-    <th>क्या करेगा</th>
-  </tr>
-  <tr>
-    <td>start</td>
-    <td>ऊपर / left</td>
-  </tr>
-  <tr>
-    <td>end</td>
-    <td>नीचे / right</td>
-  </tr>
-  <tr>
-    <td>center</td>
-    <td>बीच में</td>
-  </tr>
-  <tr>
-    <td>stretch</td>
-    <td>पूरी cell भर देगा</td>
-  </tr>
-</table>
-<hr>
-<h2>15. auto-fit</h2>
-<h3>क्या करता है</h3>
-<p>यह <b>responsive grid बनाने के लिए</b> use होता है।</p>
-<p>यह container की width के अनुसार <b>automatically columns adjust करता है।</b></p>
-<h3>Syntax</h3>
-<pre><code class="language-css">grid-template-columns: repeat(auto-fit, 200px);</code></pre>
-<h3>Example</h3>
-<pre><code class="language-css">.container{
+    <h3>Result</h3>
+    <p>Grid के सारे items <b>cell के बिल्कुल center में आ जाएंगे।</b></p>
+    <h3>Common values</h3>
+    <table class="my-table">
+        <tr>
+            <th>value</th>
+            <th>क्या करेगा</th>
+        </tr>
+        <tr>
+            <td>start</td>
+            <td>ऊपर / left</td>
+        </tr>
+        <tr>
+            <td>end</td>
+            <td>नीचे / right</td>
+        </tr>
+        <tr>
+            <td>center</td>
+            <td>बीच में</td>
+        </tr>
+        <tr>
+            <td>stretch</td>
+            <td>पूरी cell भर देगा</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>15. auto-fit</h2>
+    <h3>क्या करता है</h3>
+    <p>यह <b>responsive grid बनाने के लिए</b> use होता है।</p>
+    <p>यह container की width के अनुसार <b>automatically columns adjust करता है।</b></p>
+    <h3>Syntax</h3>
+    <pre><code class="language-css">grid-template-columns: repeat(auto-fit, 200px);</code></pre>
+    <h3>Example</h3>
+    <pre><code class="language-css">.container{
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
 }</code></pre>
-<h3>Result</h3>
-<p>अगर container की width है:</p>
-<pre>800px</pre>
-<p>तो columns बनेंगे</p>
-<pre>200px 200px 200px 200px</pre>
-<p>अगर width कम हो गई तो columns भी <b>automatically कम हो जाएंगे।</b></p>
-<hr>
-<h2>16. minmax()</h2>
-<h3>क्या करता है</h3>
-<p>यह <b>minimum और maximum size</b> define करता है।</p>
-<p>यानि element <b>minimum इतना छोटा होगा और maximum इतना बड़ा हो सकता है।</b></p>
-<h3>Syntax</h3>
-<pre><code class="language-css">minmax(minimum, maximum)</code></pre>
-<h3>Example</h3>
-<pre><code class="language-css">.container{
+    <h3>Result</h3>
+    <p>अगर container की width है:</p>
+    <pre>800px</pre>
+    <p>तो columns बनेंगे</p>
+    <pre>200px 200px 200px 200px</pre>
+    <p>अगर width कम हो गई तो columns भी <b>automatically कम हो जाएंगे।</b></p>
+    <hr>
+    <h2>16. minmax()</h2>
+    <h3>क्या करता है</h3>
+    <p>यह <b>minimum और maximum size</b> define करता है।</p>
+    <p>यानि element <b>minimum इतना छोटा होगा और maximum इतना बड़ा हो सकता है।</b></p>
+    <h3>Syntax</h3>
+    <pre><code class="language-css">minmax(minimum, maximum)</code></pre>
+    <h3>Example</h3>
+    <pre><code class="language-css">.container{
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
 }</code></pre>
-<h3>Result</h3>
-<ul>
-    <li>column <b>150px से छोटा नहीं होगा</b></li>
-    <li>लेकिन space मिले तो <b>1fr तक बढ़ सकता है</b></li>
-</ul>
-<p>यह responsive layout में बहुत काम आता है।</p>
+    <h3>Result</h3>
+    <ul>
+        <li>column <b>150px से छोटा नहीं होगा</b></li>
+        <li>लेकिन space मिले तो <b>1fr तक बढ़ सकता है</b></li>
+    </ul>
+    <p>यह responsive layout में बहुत काम आता है।</p>
     <hr>
     <p>✅ ये CSS Grid के लगभग complete practical notes हैं जो web development में 90-95% use होते हैं।</p>
     <hr>
-
+    <a href="css grid master use.html" class="btn">CSS GRID MASTER USE →</a>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
