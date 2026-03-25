@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        body {}
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre {
+            border-radius: 10px;
+        }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th,
+        .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .my-table tr:hover {
+            background: #e0e7ff;
+        }
+
+
+        .container {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .container .item {
+            background-color: #0ee9f4;
+            border: 2px solid rgb(53, 56, 233);
+            aspect-ratio: 200/250;
+        }
+
+        pre {
+            background-color: rgb(228, 228, 228);
+            padding: 12px;
+            border: 2px solid black;
+            overflow-y: auto;
+        }
+
+        details {
+            background: #111;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+        }
+
+        /* default arrow hide */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* custom arrow */
+        summary::after {
+            content: "➕";
+            position: absolute;
+            right: 0;
+            transition: 0.3s;
+        }
+
+        /* open hone par arrow change */
+        details[open] summary::after {
+            content: "➖";
+        }
+
+        /* hover effect */
+        details:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .item2 {
+            background-color: rgb(12, 225, 215);
+            border: 2px solid rgb(255, 0, 225);
+            /* width: 200px; */
+            width: 100%;
+            /* height: 200px; */
+            height: 100%;
+            aspect-ratio: 200/300;
+        }
+
+        .note-card-contain {
+            background: #0f172a;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        /* card */
+        .note-card {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            line-height: 1.6;
+            transition: 0.3s;
+        }
+
+        /* hover effect */
+        .note-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* heading */
+        .note-card h3 {
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+
+        /* paragraphs */
+        .note-card p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .note-card b {
+            color: #55cbe8;
+        }
+
+        /* highlight important line */
+        .note-card .note {
+            background: rgba(56, 189, 248, 0.1);
+            padding: 8px;
+            border-left: 3px solid #38bdf8;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔥🔥🔥 CSS Grid Master Use</h1>
+    <details>
+        <summary>CSS CODE</summary>
+        <pre><code class="language-css">.container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.container .item {
+    background-color: rgb(14, 233, 244);
+    border: 2px solid rgb(53, 56, 233);
+    aspect-ratio: 200/250;
+}</code></pre>
+    </details>
+    <details>
+        <summary>HTML CODE</summary>
+        <pre><code class="language-html">&lt;div class="container"&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+</div></code></pre>
+    </details>
+
+
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <h2>Explaination</h2>
+    <div class="note-card-contain">
+        <div class="note-card">
+            <h3>🔹 repeat(auto-fit, minmax(200px, 1fr))</h3>
+            <p><b>repeat(auto-fit, minmax(200px, 1fr))</b><br>
+                <b>repeat(auto-fit=</b> कितने कॉलम होंगे यह पहले से तय नहीं है,
+                जितनी जगह मिलेगी उतने कॉलम अपने आप (auto-fit) बन जाएंगे
+                <b>mimnax(200px =</b>हर कॉलम की न्यूनतम चौड़ाई 200px होगी
+                <b>1fr = </b>और अगर अतिरिक्त जगह मिले तो सभी कॉलम मिलकर उसे बराबर हिस्सों <b>(1fr + 1fr + …)</b> में
+                बाँट लेंगे <b>))</b>
+            </p>
+        </div>
+    </div>
+    <div class="note-card-contain" style="margin-top: 20px;">
+        <div class="note-card">
+            <h3>🔹 aspect-ratio: 200/250;</h3>
+
+            <p><b>aspect-ratio: 200/250</b><br>
+                = चौड़ाई : ऊँचाई = 200 : 250 का अनुपात रहेगा</p>
+
+            <p>
+                समझने के लिए हम मान लेते हैं कि चौड़ाई 200px है,<br>
+                तो ऊँचाई 250px होगी
+            </p>
+
+            <p>
+                यानी हमें 200 : 250 का अनुपात मिलता है,<br>
+                जिसे सरल रूप में 20 : 25 या 2 : 2.5 भी लिख सकते हैं
+            </p>
+
+            <p class="note">
+                ध्यान रहे: यह केवल अनुपात है, वास्तविक px मान जरूरी नहीं है
+            </p>
+        </div>
+    </div>
+
+
+    <h2>🤔 अगर card की width और height पहले से ही निर्धारित हो!</h2>
+
+    <div class="container2">
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+    </div>
+
+    <details>
+        <summary>CSS CODE</summary>
+        <pre><code class="language-css">.container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.item2 {
+    background-color: rgb(12, 225, 215);
+    border: 2px solid rgb(255, 0, 225);
+    /* width: 200px; */
+    width: 100%;
+    /* height: 200px; */
+    height: 100%;
+    aspect-ratio: 200/300;
+}</code></pre>
+    </details>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>
