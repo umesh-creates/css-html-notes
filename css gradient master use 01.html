@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 10px 320px;
+        }
+
+        @media (max-width: 426px) {
+            body {
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 769px) {
+            body {
+                margin: 15px;
+            }
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        details {
+            background: #111;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "➕";
+            position: absolute;
+            right: 0;
+        }
+
+        details[open] summary::after {
+            content: "➖";
+        }
+
+        details:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .card {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(159, 178, 240);
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 50px;
+            font-size: 30px;
+            margin: auto;
+            display: grid;
+            place-items: center;
+            /* width: 100%; */
+            color: white;
+            font-weight: 600;
+            font-family: sans-serif;
+            /* gradient master use */
+            background:
+                linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 0%,
+                    /* upar bilkul transparent */
+                    rgba(0, 0, 0, 0.05) 10%,
+                    /* thoda shadow start */
+                    rgba(0, 0, 0, 0.2) 40%,
+                    /* mid thoda dark */
+                    rgba(0, 0, 0, 0.6) 100%
+                    /* niche dark */
+                );
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="box"></div>
+        <div class="overlay">Hello Everyone!</div>
+    </div>
+    <details>
+        <summary>CSS CODE</summary>
+        <pre><code class="language-css">/* gradient master use */
+background:
+linear-gradient(to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    /* upar bilkul transparent */
+    rgba(0, 0, 0, 0.05) 10%,
+    /* thoda shadow start */
+    rgba(0, 0, 0, 0.2) 40%,
+    /* mid thoda dark */
+    rgba(0, 0, 0, 0.6) 100%
+    /* niche dark */
+);</code></pre>
+    </details>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>

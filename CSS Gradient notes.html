@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Gradient</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Prism Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 10px 320px;
+        }
+
+        @media (max-width: 426px) {
+            body { margin: 10px; }
+        }
+
+        @media (max-width: 769px) {
+            body { margin: 15px; }
+        }
+
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        pre { border-radius: 10px; }
+
+        .my-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .my-table th {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .my-table th, .my-table td {
+            border: 1px solid #ccc;
+        }
+
+        .my-table tr:nth-child(even) { background: #f2f2f2; }
+        .my-table tr:hover { background: #e0e7ff; }
+
+        details {
+            background: #111;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 10px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        summary::after {
+            content: "➕";
+            position: absolute;
+            right: 0;
+        }
+
+        details[open] summary::after { content: "➖"; }
+
+        details:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .btn {
+            text-decoration: none;
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        /* hover effect */
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+<h1>🎨 CSS Gradient</h1>
+<h3>🔹 Gradient क्या होता है?</h3>
+<p>👉 Gradient मतलब <b>2 या उससे ज्यादा colors का smooth transition (धीरे-धीरे बदलना)</b></p>
+<p>📌 Example: <br>
+red → blue (बीच में कई shades बनते हैं)</p>
+<hr>
+<h2>🔹 Gradient के प्रकार</h2>
+<h3>1️⃣ Linear Gradient</h3>
+<p>👉 सीधी line में color change होता है</p>
+<h3>📌 Syntax:</h3>
+<pre><code class="language-css">background: linear-gradient(direction, color1, color2, ...);</code></pre>
+<h3>📌 Example:</h3>
+<pre><code class="language-css">background: linear-gradient(to right, red, blue);</code></pre>
+<p>👉 मतलब: <br>
+left से right → red से blue</p>
+<hr>
+<h3>🎯 Direction समझो</h3>
+<table class="my-table">
+    <thead>
+        <tr>
+            <th>Direction</th>
+            <th>मतलब</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>to right</td>
+            <td>left → right</td>
+        </tr>
+        <tr>
+            <td>to left</td>
+            <td>right → left</td>
+        </tr>
+        <tr>
+            <td>to top</td>
+            <td>bottom → top</td>
+        </tr>
+        <tr>
+            <td>to bottom</td>
+            <td>top → bottom</td>
+        </tr>
+    </tbody>
+</table>
+<p>📌 Angle से भी दे सकते हैं:</p>
+<pre><code class="language-css">background: linear-gradient(45deg, red, blue);</code></pre>
+<hr>
+<h3>2️⃣ Radial Gradient</h3>
+<p>👉 center से गोल (circle) में color फैलता है</p>
+<h3>📌 Syntax:</h3>
+<pre><code class="language-css">background: radial-gradient(color1, color2);</code></pre>
+<h3>📌 Example:</h3>
+<pre><code class="language-css">background: radial-gradient(red, yellow);</code></pre>
+<p>👉 center में red → बाहर yellow</p>
+<hr>
+<h3>3️⃣ Conic Gradient</h3>
+<p>👉 circle में घूमते हुए color change होता है</p>
+<h3>📌 Example:</h3>
+<pre><code class="language-css">background: conic-gradient(red, blue, green);</code></pre>
+<p>👉 pie chart जैसा look आता है</p>
+<hr>
+<h3>🔹 Multiple Colors Gradient</h3>
+<pre><code class="language-css">background: linear-gradient(to right, red, yellow, green);</code></pre>
+<p>👉 red → yellow → green smoothly change होगा</p>
+<hr>
+<h3>🔹 Color Stop (Control करना)</h3>
+<p>👉 तुम decide कर सकते हो कौन सा color कहाँ तक रहेगा</p>
+<pre><code class="language-css">background: linear-gradient(to right, red 20%, blue 80%);</code></pre>
+<p>👉 red = 20% तक <br>
+👉 blue = 80% से end</p>
+<hr>
+<h3>🔹 Transparent Gradient</h3>
+<p>👉 opacity effect के लिए</p>
+<pre><code class="language-css">background: linear-gradient(to right, rgba(255,0,0,0), red);</code></pre>
+<p>👉 transparent → red</p>
+<hr>
+<h3>🔹 Text Gradient (Pro Trick 🔥)</h3>
+<pre><code class="language-css">background: linear-gradient(to right, red, blue);
+-webkit-background-clip: text;
+color: transparent;</code></pre>
+<p>👉 text के अंदर gradient दिखेगा</p>
+<hr>
+<h3>🔹 Important Tips</h3>
+
+<p>✔ gradient हमेशा background में use होता है</p>
+<p>✔ images की जगह gradient use कर सकते हो</p>
+<p>✔ button, card, text — सबमें use होता है</p>
+<p>✔ modern UI में बहुत use होता है</p>
+
+<a href="css gradient master use 01.html" class="btn">CSS GRADIENT MASTER USE  &nbsp;&nbsp;&nbsp;👉</a>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+</html>
